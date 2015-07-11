@@ -41,7 +41,7 @@ class PicklingBugTest extends WordSpecLike with Matchers
 //      }
     }
 
-    "unpickle java.lnag.Class from JSON" in {
+    "unpickle java.lang.Class from JSON" in {
       val clazz: Class[Int] = classOf[Int]
 
       val pickle = clazz.pickle
@@ -50,7 +50,7 @@ class PicklingBugTest extends WordSpecLike with Matchers
       val deserializedClass: Class[Int] = deserializedJsonPickle.unpickle[Class[Int]] // fails on this line
       deserializedClass shouldEqual clazz
 
-// [info] - must unpickle java.lnag.Class from JSON *** FAILED ***
+// [info] - must unpickle java.lang.Class from JSON *** FAILED ***
 // [info]   java.lang.IllegalAccessException: java.lang.Class
 // [info]   at sun.misc.Unsafe.allocateInstance(Native Method)
 // [info]   at PicklingBugTest$$anonfun$1$$anonfun$apply$mcV$sp$2$JavaLangClass$u005BscalaInt$u005DUnpickler$macro$3$2$.unpickle(PicklingBugTest.scala:52)
